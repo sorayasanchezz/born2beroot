@@ -7,7 +7,7 @@ of the 42 curriculum by sosanche*
 
 ## Description
 
-Este proyecto trata sobre crear una máquina virtual dónde 
+Este proyecto trata sobre crear un servidor en una máquina virtual aplicando algunas reglas como controlar particiones cifradas, creación de usuarios y grupos, script de monitorización en bash y instalación de servicios como WordPress 
 
 explicar la elección del sistema operativo (Debian o Rocky), con sus respectivas ventajas y desventajas
 
