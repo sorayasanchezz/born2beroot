@@ -83,7 +83,7 @@ visudo
 crontab -e 
 ```
 
-![result](image.png)
+![result](/img/image.png)
 
 10. Para el bonus la instalación de wordpress es igual para todo el mundo, no es la primera vez que instalaba wordpress así que se me hizo más sencillo que lo demás
 
