@@ -5,6 +5,8 @@ of the 42 curriculum by sosanche*
 <h1 align="center">Born2beroot
 </h1>
 
+<a href="defitero.com"><img src="https://media.eu.badgr.com/uploads/issuers/issuer_logo_3b392490-eb21-4e1a-a068-d0df9f079c8b.png"></a>
+
 ## Description
 
 Este proyecto trata sobre crear un servidor minimalista en una máquina virtual aplicando algunas reglas como por ejemplo controlar particiones cifradas, creación de usuarios y grupos, script de monitorización en bash y instalación de servicios como WordPress, ssh, firewall.. 
@@ -86,51 +88,46 @@ Debe indicar las principales decisiones de diseño tomadas durante la configurac
 ◦ UFW vs. Firewalld
 ◦ VirtualBox vs. UTM
 
-objetivo
-breve descripciń general
-
-
-
 ## Resources
 
 numera referencias clásicas relacionadas con el tema (documentación, artículos, tutoriales, etc.), así como una descripción de cómo se utilizó la IA.
-
-
-
-Lista de cosas para hacer antes de 2030:
-- Morir
-- Vender mis acciones
-- Ser Elon Musk
-- Dejar de ser Elon Musk porque te has dado cuenta de que es un puto gillipollas.
-
-1. 1
-2. 2
 
 [holas](defitero.com)
 
 ![holas](1920x1080.jpg)
 
-<a href="defitero.com"><img src="https://pmecdn.protonweb.com/image-transformation/?s=c&image=image%2Fupload%2Fstatic%2Flogos%2Ficons%2Fmail_xxy4bg.svg"></a>
 
 
-## Compilation steps
-``` bash
-make all
-```
-
-``` c
-#include "libft.h"
-// Caca. Eklsdf
-
-int	main(void)
-{
-
-}
-
-```
 
 ## Additional Sections
 
 1. Debian VS Rocky 
 
-Debian es menos complejo
+Elegí debian y no rocky porque es más sencillo de instalar, y estaba más o menos familiarizada con los comandos, la instalación es más guiada, rocky linux está pensado más para entornos empresariales, más para ser un servidor. Debian tiene menos opciones/capas de seguridad que tocar, es menos técnico y te recomiendan usar Rocky Linux si tienes experiencia de antes con máquinas virtuales.
+
+2. AppArmor vs SELinux
+
+AppArmor controla qué puede hacer un programa según la ruta del archivo, por ejemplo, si el programa está en /mono/banana, solo puede acceder a archivos que haya dentro de /mono/banana, por ejemplo no podría entrar a /mono/cocodrilo, esto se hace por seguridad para que no puedan modificar o leer archivos que no corresponden.
+
+SElinux funciona de manera similar pero no con la ruta, si no con etiquetas, ya que todos los archivos, procesos.. tienen una etiqueta de seguridad, por ejemplo httpd_t puede interactuar con httpd_sys_content_t y es más estricto, ya que si un proceso tiene una etiqueta mal puesta, el proceso muere.
+
+3. UFW vs firewalld
+
+Cambia bastante en dificultad, UFW está bastante humanizado, esto lo voy a explicar con el ejemplo de SSH, en UFW tardas dos segundos, en firewalld para entender lo que estás haciendo tardas mucho más:
+
+UFW:
+``` bash
+sudo ufw allow OpenSSH
+sudo ufw allow 22
+```
+
+firewalld:
+``` bash
+sudo firewall-cmd --zone=public --add-service=ssh --permanent
+sudo firewall-cmd --reload
+```
+
+4. VirtualBox vs UTM
+
+La diferencia es según la estructura de procesador que tengas, VirtualBox sirve para x86_64 (Intel, AMD), y UTM funciona en procesadores ARM, sirve mayormente para MAC, porque en Linux y Windows no vas a tener esos procesadores.
+
