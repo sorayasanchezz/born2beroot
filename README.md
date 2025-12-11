@@ -5,7 +5,7 @@ of the 42 curriculum by sosanche*
 <h1 align="center">Born2beroot
 </h1>
 
-<a href="defitero.com"><img src="https://media.eu.badgr.com/uploads/issuers/issuer_logo_3b392490-eb21-4e1a-a068-d0df9f079c8b.png"></a>
+<img src="https://github.com/mcombeau/mcombeau/raw/main/42_badges/born2beroote.png" style="width:120px;"></a>
 
 ## Description
 
@@ -56,13 +56,13 @@ sudo ufw status
 ``` bash
 sudo chage -l <user>
 cat /etc/login.defs
-cat /etc/padm.d/common-password
+cat /etc/pam.d/common-password
 ```
 
 Y para la política de sudo:
 
 ``` bash
-cat /var/log/sudo/
+visudo
 ```
 
 9. Después cree el monitoring, el cual utilicé cron para que aparezca cada 10 minutos:
@@ -79,25 +79,32 @@ cat /var/log/sudo/
 - IP + MAC
 - número de comandos sudo ejecutados
 
+``` bash 
+crontab -e 
+```
 
-explicar la elección del sistema operativo (Debian o Rocky), con sus respectivas ventajas y desventajas
+![result](image.png)
 
-Debe indicar las principales decisiones de diseño tomadas durante la configuración (particionamiento, políticas de seguridad, administración de usuarios, servicios instalados), así como una comparación entre:
-◦ Debian vs. Rocky Linux
-◦ AppArmor vs. SELinux
-◦ UFW vs. Firewalld
-◦ VirtualBox vs. UTM
+10. Para el bonus la instalación de wordpress es igual para todo el mundo, no es la primera vez que instalaba wordpress así que se me hizo más sencillo que lo demás
+
+11. Lo que entregamos es la firma de la máquina, la cuál cambia cada vez que la abres, por eso es muy importante no tocar la máquina, de hecho lo mejor es quitarte los permisos en ese archivo para que no te deje abrirlo, ya que si no la firma cambia.
+Para conseguir la firma hay que ir hacia la carpeta de la máquina virtual
+
+``` bash
+shasum machinename.vdi
+```
 
 ## Resources
 
-numera referencias clásicas relacionadas con el tema (documentación, artículos, tutoriales, etc.), así como una descripción de cómo se utilizó la IA.
+[Conceptos clave y organización, contiene los enlaces para descargar VirtualBox y otros necesarios](https://42-fran-byte-f94097.gitlab.io/docs/born2beroot/born2beroot-approach-es/#/)
 
-[holas](defitero.com)
+[Explicaciones, es una página con muchisima información y muy bien hecha](https://www.gibbontech.com/ecole42/born2beroot/index.html)
 
-![holas](1920x1080.jpg)
+[Advierte de errores muy útiles como de sgoinfre, var--log y relacionados con contraseña](https://github.com/alx-sch/born2beroot)
 
+[Video de la página anterior](https://www.youtube.com/watch?v=OQEdjt38ZJA&t=349s)
 
-
+[Mis compañeros me recomendaron esta página cuando me atasqué con la parte de cálculos en el monitoring (ram, almacenamiento y sobretodo CPU)](https://noreply.gitbook.io/born2beroot)
 
 ## Additional Sections
 
@@ -130,4 +137,3 @@ sudo firewall-cmd --reload
 4. VirtualBox vs UTM
 
 La diferencia es según la estructura de procesador que tengas, VirtualBox sirve para x86_64 (Intel, AMD), y UTM funciona en procesadores ARM, sirve mayormente para MAC, porque en Linux y Windows no vas a tener esos procesadores.
-
