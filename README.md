@@ -9,11 +9,11 @@ of the 42 curriculum by sosanche*
 
 ## Description
 
-Este proyecto trata sobre crear un servidor minimalista en una máquina virtual aplicando algunas reglas como por ejemplo controlar particiones cifradas, creación de usuarios y grupos, script de monitorización en bash y instalación de servicios como WordPress, ssh, firewall.. 
+Este proyecto trata sobre crear un servidor minimalista en una máquina virtual aplicando algunas reglas como por ejemplo controlar particiones cifradas, creación de usuarios y grupos, script de monitorización en bash y instalación de servicios como WordPress, ssh, firewall... 
 
 ## Instructions
 
-1. Escoger que versión escoges, yo elegí debian y no rocky porque era la opción más fácil y yo no me manejo mucho con máquinas virtuales, esta tienes que descargarla sin entorno gráfico
+1. Escoger que versión escoges, yo elegí Debian y no Rocky Linux porque era la opción más fácil y yo no me manejo mucho con máquinas virtuales, esta tienes que descargarla sin entorno gráfico
 
 2. Durante la instalación configuré las particiones cifradas con LVM que aparecen predeterminadas y luego cree otras dos aparte
 
@@ -21,7 +21,7 @@ Este proyecto trata sobre crear un servidor minimalista en una máquina virtual 
 lsblk
 ```
 
-3. Llamo a mi hostname sosache42, como bien pide el ejercicio
+3. Llamo a mi hostname sosanche42, como bien pide el ejercicio
 
 ``` bash
 hostnamectl
@@ -110,13 +110,13 @@ shasum machinename.vdi
 
 1. Debian VS Rocky 
 
-Elegí debian y no rocky porque es más sencillo de instalar, y estaba más o menos familiarizada con los comandos, la instalación es más guiada, rocky linux está pensado más para entornos empresariales, más para ser un servidor. Debian tiene menos opciones/capas de seguridad que tocar, es menos técnico y te recomiendan usar Rocky Linux si tienes experiencia de antes con máquinas virtuales.
+Elegí Debian y no Rocky porque es más sencillo de instalar, y estaba más o menos familiarizada con los comandos, la instalación es más guiada, Rocky linux está pensado más para entornos empresariales, más para ser un servidor. Debian tiene menos opciones/capas de seguridad que tocar, es menos técnico y te recomiendan usar Rocky Linux si tienes experiencia de antes con máquinas virtuales.
 
 2. AppArmor vs SELinux
 
 AppArmor controla qué puede hacer un programa según la ruta del archivo, por ejemplo, si el programa está en /mono/banana, solo puede acceder a archivos que haya dentro de /mono/banana, por ejemplo no podría entrar a /mono/cocodrilo, esto se hace por seguridad para que no puedan modificar o leer archivos que no corresponden.
 
-SElinux funciona de manera similar pero no con la ruta, si no con etiquetas, ya que todos los archivos, procesos.. tienen una etiqueta de seguridad, por ejemplo httpd_t puede interactuar con httpd_sys_content_t y es más estricto, ya que si un proceso tiene una etiqueta mal puesta, el proceso muere.
+SELinux funciona de manera similar pero no con la ruta, si no con etiquetas, ya que todos los archivos, procesos... Tienen una etiqueta de seguridad, por ejemplo httpd_t puede interactuar con httpd_sys_content_t y es más estricto, ya que si un proceso tiene una etiqueta mal puesta, el proceso muere.
 
 3. UFW vs firewalld
 
